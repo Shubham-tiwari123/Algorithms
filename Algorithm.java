@@ -55,6 +55,35 @@ public class Algorithm {
             System.out.println("Smallest element:-"+max1+" second smallest:-"+max2);
     }
     
+    void minAndMax(int arr[]){
+        int min,max;
+        min = arr[0];
+        max = arr[1];
+        if(arr.length==2){
+            if(min>max){
+                int temp = max;
+                max = min;
+                min = temp;
+                System.out.println("min:-"+min+" max:-"+max);
+            }
+            else
+                System.out.println("min:-"+min+" max:-"+max);
+            return;
+        }
+        else if(arr.length<2){
+            System.out.println("Invalid input");
+            return;
+        }
+        for(int i=2;i<arr.length;i++){
+            if(arr[i]>max)
+                max = arr[i];
+            else if(arr[i]<min)
+                min = arr[i];
+        }
+        
+        System.out.println("min:-"+min+" max:-"+max);
+    }
+    
     public static void main(String[] args) {
         Algorithm algorithm = new Algorithm();
         Scanner scanner = new Scanner(System.in);
@@ -76,6 +105,11 @@ public class Algorithm {
             case 2:
                  int arr[] = {12, 13, 1, 10, 34, 1}; 
                  algorithm.secondSmallestNumber(arr);
+                 break;
+                 
+            case 3:
+                 int arr4[] = {1000,11,445,1,330,3000}; 
+                 algorithm.minAndMax(arr4);
         }
         
     }
