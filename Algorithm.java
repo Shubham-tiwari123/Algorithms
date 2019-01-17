@@ -1,5 +1,8 @@
 package algorithm;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Algorithm {
@@ -84,6 +87,21 @@ public class Algorithm {
         System.out.println("min:-"+min+" max:-"+max);
     }
     
+    void kLargestElement(Integer arr[],int key){
+        Arrays.sort(arr, Collections.reverseOrder());
+        for(int i=0;i<key;i++)
+            System.out.println(arr[i]);
+    }
+    
+    void numberOfOccurence(int arr[],int x){
+        int count=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==x)
+                count++;
+        }
+        System.out.println("Count:-"+count);
+    }
+    
     public static void main(String[] args) {
         Algorithm algorithm = new Algorithm();
         Scanner scanner = new Scanner(System.in);
@@ -110,6 +128,18 @@ public class Algorithm {
             case 3:
                  int arr4[] = {1000,11,445,1,330,3000}; 
                  algorithm.minAndMax(arr4);
+                 break;
+                 
+            case 4:
+                Integer arr5[] = {1, 23, 12, 9,30, 2, 50}; 
+                int k = 3; 
+                algorithm.kLargestElement(arr5, k);
+                break;
+                
+            case 5:
+                int arr6[] = {1,1,2,2,2,2,3};
+                n=2;
+                algorithm.numberOfOccurence(arr6, n);
         }
         
     }
