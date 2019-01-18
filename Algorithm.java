@@ -102,6 +102,24 @@ public class Algorithm {
         System.out.println("Count:-"+count);
     }
     
+    void findRepeatingAndMissing(Integer arr[]){
+        Arrays.sort(arr);
+        int num1 = arr[0];
+        int count=0;
+        int repeatedNum = 0;
+        int missingNumber;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==arr[i+1]){
+                count++;
+                repeatedNum = arr[i];
+                break;
+            }
+        }
+        
+        
+        System.out.println(repeatedNum);
+    }
+    
     public static void main(String[] args) {
         Algorithm algorithm = new Algorithm();
         Scanner scanner = new Scanner(System.in);
@@ -140,6 +158,12 @@ public class Algorithm {
                 int arr6[] = {1,1,2,2,2,2,3};
                 n=2;
                 algorithm.numberOfOccurence(arr6, n);
+                break;
+                
+            case 6:
+                Integer arr7[] = {4, 3, 6, 2, 1, 1};
+                algorithm.findRepeatingAndMissing(arr7);
+                break;
         }
         
     }
